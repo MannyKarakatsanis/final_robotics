@@ -1,0 +1,9 @@
+<launch>
+
+
+    <node pkg="maze" name="maze" type="maze.py"/>
+    <node pkg="maze" name="pid" type="pid.py"/>
+
+
+
+</launch>
