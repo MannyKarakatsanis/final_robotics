@@ -61,8 +61,8 @@ class Maze:
 
 
             # calculate the error
-            # error = self.calculate_error(x3_left, x3_right, no_left_line, no_right_line)
-            error = 0.0
+            error = self.calculate_error(x3_left, x3_right, no_left_line, no_right_line)
+
         else:
             error = 0.0
 
