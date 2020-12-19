@@ -96,13 +96,16 @@ class Maze:
             error = 0.0
         # only the left line exists
         if no_left_line is False and no_right_line is True:
-            if x3_left < 50:
-                error = 0.0
-            else:
-                error = 0.0
+            # way too close to the right
+            if x3_right < 610 and x3_left > 50:
+                error = -0.1
+
+            if x3_right > 638 and x3_left < 0:
+                error = 0.1
+
         if no_left_line is True and no_right_line is False:
-            if x3_right > 650:
-                error = 0.0
+            if x3_right > 638 and x3_left < 0:
+                error = 0.1
             else:
                 error = 0.0
         if no_left_line is True and no_right_line is True:
@@ -154,17 +157,10 @@ class Maze:
         cv2.line(cv_cropped,(638,130),(638, 198),(0,0,0),4)
         cv2.line(cv_cropped,(638, 198),(578, 198),(0,0,0),4)
         cv2.line(cv_cropped,(578, 198),(638, 130),(0,0,0),4)
-        # cv2.line(cv_cropped,(600, 65),(638,65),(255,255,255),5)
-        # cv2.line(cv_cropped,(638,65),(638, 149),(255,255,255),5)
-        # cv2.line(cv_cropped,(638, 149),(600, 149),(255,255,255),5)
-        # cv2.line(cv_cropped,(600, 149),(600, 65),(255,255,255),5)
-        # cv2.line(cv_cropped,(600, 65),(638,65),(255,255,255),5)
+
 
         # LEFT 
-        # cv2.line(cv_cropped,(38,65),(38, 149),(255,255,255),5)
-        # cv2.line(cv_cropped,(38, 149),(0, 149),(255,255,255),5)
-        # cv2.line(cv_cropped,(0, 149),(0, 65),(255,255,255),5)
-        # cv2.line(cv_cropped,(0, 65),(38,65),(255,255,255),5)
+
         cv2.line(cv_cropped,(0,130),(0, 198),(0,0,0),4)
         cv2.line(cv_cropped,(0, 198),(60, 198),(0,0,0),4)
         cv2.line(cv_cropped,(60, 198),(0, 130),(0,0,0),4)
